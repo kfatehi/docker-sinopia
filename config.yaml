@@ -5,7 +5,7 @@ storage: ./storage
 users:
   admin:
     # crypto.createHash('sha1').update(pass).digest('hex')
-    password: 369a4065b8d46ce83d57bdd473c2f0ffa51de071
+    password: fcc5c13c71a559439df81922c7b5e687314f48be
 
 # a list of other known repositories we can talk to
 uplinks:
@@ -48,7 +48,7 @@ packages:
 #url_prefix: https://dev.company.local/sinopia/
 
 # you can specify listen address (or simply a port)
-#listen: localhost:4873
+listen: 0.0.0.0:4873
 
 # type: file | stdout | stderr
 # level: trace | debug | info | http (default) | warn | error | fatal
