@@ -5,29 +5,39 @@ storage: ./storage
 users:
   admin:
     # crypto.createHash('sha1').update(pass).digest('hex')
-    password: fcc5c13c71a559439df81922c7b5e687314f48be
+    password: c8ef5e28ccce09936c175813b7f697a751e18bc8
 
 # a list of other known repositories we can talk to
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
 
-    # amount of time (in milliseconds) to wait for repository to respond
+    # amount of time to wait for repository to respond
     # before giving up and use the local cached copy
-    #timeout: 30000
+    #timeout: 30s
 
-    # maximum time (in seconds) in which data is considered up to date
+    # maximum time in which data is considered up to date
     #
     # default is 2 minutes, so server won't request the same data from
     # uplink if a similar request was made less than 2 minutes ago
-    #maxage: 120
+    #maxage: 2m
+
+    # if two subsequent requests fail, no further requests will be sent to
+    # this uplink for five minutes
+    #max_fails: 2
+    #fail_timeout: 5m
+
+    # timeouts are defined in the same way as nginx, see:
+    # http://wiki.nginx.org/ConfigNotation
 
 packages:
-  # uncomment this for packages with "local-" prefix to be available 
+  # uncomment this for packages with "local-" prefix to be available
   # for admin only, it's a recommended way of handling private packages
   #'local-*':
   #  allow_access: admin
   #  allow_publish: admin
+  #  # you can override storage directory for a group of packages this way:
+  #  storage: 'local_storage'
 
   '*':
     # allow all users to read packages ('all' is a keyword)
@@ -67,4 +77,13 @@ logs:
 #http_proxy: http://something.local/
 #https_proxy: https://something.local/
 #no_proxy: localhost,127.0.0.1
+
+# maximum size of uploaded json document
+# increase it if you have "request entity too large" errors
+#max_body_size: 1mb
+
+# Workaround for countless npm bugs. Must have for npm <1.14.x, but expect
+# it to be turned off in future versions. If `true`, latest tag is ignored,
+# and the highest semver is placed instead.
+#ignore_latest_tag: false
 

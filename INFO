@@ -8,6 +8,6 @@ Config file doesn't exist, create a new one? (Y/n) =============================
  $ npm set always-auth true
  $ npm adduser
    Username: admin
-   Password: vJgcrFiV2D0
+   Password: IWUEkak1n2s
 ===========================================================
  warn  --- Server is listening on http://localhost:4873/

@@ -8,5 +8,5 @@ sed 's/\#listen\: localhost/listen\: 0.0.0.0/' config.yaml > tmp.yaml
 kill -9 $pid
 rm config.yaml
 mv tmp.yaml config.yaml
-sudo docker build -t keyvanfatehi/docker-sinopia .
+docker build -t keyvanfatehi/docker-sinopia .
 echo publish with sudo docker push keyvanfatehi/docker-sinopia
