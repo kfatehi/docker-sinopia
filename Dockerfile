@@ -1,13 +1,14 @@
-FROM keyvanfatehi/precise-nodejs-from-binary
-
+FROM ubuntu:14.04
 MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
-
-ADD node_modules/sinopia /usr/local/lib/node_modules/sinopia
-RUN ln -s /usr/local/lib/node_modules/sinopia/bin/sinopia /usr/local/bin/sinopia
-ADD config.yaml config.yaml
-RUN mkdir storage
+RUN apt-get -y update
+RUN apt-get -y install nodejs npm make build-essential python python-dev
+RUN npm install sinopia js-yaml
 RUN adduser --disabled-password --gecos "" sinopia
-RUN chown sinopia storage
+RUN mkdir -p /opt/sinopia/storage
+RUN chown -R sinopia:sinopia /opt/sinopia
 USER sinopia
+WORKDIR /opt/sinopia
+ADD /config_gen.js /opt/sinopia/config_gen.js
+ADD /start.sh /opt/sinopia/start.sh
+CMD ["/opt/sinopia/start.sh"]
 EXPOSE 4873
-CMD ["/usr/local/bin/sinopia"]
