@@ -4,11 +4,11 @@ Sinopia is a private npm repository server
 
 ### Installing Image
 
-`docker pull keyvanfatehi/docker-sinopia`
+`docker pull keyvanfatehi/sinopia`
 
 ### Creating Container
 
-`docker run -name sinopia -d -p 4873:4873 -v /path/to/host/storage:/opt/sinopia/storage keyvanfatehi/docker-sinopia`
+`docker run -name sinopia -d -p 4873:4873 -v /path/to/host/storage:/opt/sinopia/storage keyvanfatehi/sinopia`
 
 ### Setting Registry
 
@@ -21,4 +21,4 @@ Sinopia is a private npm repository server
 ## Links
 
 * [Sinopia on Github](https://github.com/rlidwka/sinopia)
-* [Sinopia on Docker](https://index.docker.io/u/keyvanfatehi/docker-sinopia/)
+* [Sinopia on Docker](https://registry.hub.docker.com/u/keyvanfatehi/sinopia/)
