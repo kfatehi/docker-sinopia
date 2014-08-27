@@ -12,3 +12,4 @@ ADD /config_gen.js /opt/sinopia/config_gen.js
 ADD /start.sh /opt/sinopia/start.sh
 CMD ["/opt/sinopia/start.sh"]
 EXPOSE 4873
+VOLUME /opt/sinopia
