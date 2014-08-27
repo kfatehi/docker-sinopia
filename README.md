@@ -8,7 +8,7 @@ Sinopia is a private npm repository server
 
 ### Creating Container
 
-`docker run -name sinopia -d -p 4873:4873 -v /path/to/host/storage:/opt/sinopia/storage keyvanfatehi/sinopia:0.9.0`
+`docker run --name sinopia -d -p 4873:4873 keyvanfatehi/sinopia:0.9.1`
 
 ### Setting Registry
 
@@ -17,6 +17,33 @@ Sinopia is a private npm repository server
 ### Determining Username and Password
 
 `docker logs sinopia`
+
+### Modify configuration
+
+```
+docker stop sinopia
+docker run --volumes-from sinopia -it ubuntu vi /opt/sinopia/config.yaml
+docker stop sinopia
+```
+
+### Backups
+
+`docker run --volumes-from sinopia -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /opt/sinopia`
+
+Alternatively, host path for /opt/sinopia can be determined by running:
+
+`docker inspect sinopia`
+
+### Restore
+
+```
+docker stop sinopia
+docker rm sinopia
+docker run --name sinopia -d -p 4873:4873 keyvanfatehi/sinopia:0.9.1
+docker stop sinopia
+docker run --volumes-from sinopia -v $(pwd):/backup ubuntu tar xvf /backup/backup.tar
+docker start sinopia
+```
 
 ## Links
 
