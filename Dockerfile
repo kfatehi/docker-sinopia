@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
 RUN apt-get -y update
 RUN apt-get -y install nodejs npm make build-essential python python-dev
-RUN npm install js-yaml sinopia@0.9.0 
+RUN npm install js-yaml sinopia@0.9.3
 RUN adduser --disabled-password --gecos "" sinopia
 RUN mkdir -p /opt/sinopia/storage
 RUN chown -R sinopia:sinopia /opt/sinopia
