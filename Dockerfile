@@ -1,7 +1,5 @@
-FROM ubuntu:14.04
+FROM dockerfile/nodejs
 MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
-RUN apt-get -y update
-RUN apt-get -y install nodejs npm make build-essential python python-dev
 RUN npm install js-yaml sinopia@0.9.3
 RUN adduser --disabled-password --gecos "" sinopia
 RUN mkdir -p /opt/sinopia/storage
