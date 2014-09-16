@@ -1,4 +1,4 @@
-#!/usr/bin/env nodejs
+#!/usr/bin/env node
 var config = require('sinopia/lib/config_gen')()
   , yaml = require('js-yaml')
   , fs = require('fs')

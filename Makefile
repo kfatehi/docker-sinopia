@@ -11,6 +11,12 @@ start-test: stop-test build
 stop-test:
 	-docker rm -f sinopia-test 2>&1 > /dev/null
 
+test: build
+	docker run --rm -i -t keyvanfatehi/docker-sinopia
+
+shell: build
+	docker run --rm -i -t keyvanfatehi/docker-sinopia /bin/bash
+
 logs:
 	docker logs sinopia-test
 
