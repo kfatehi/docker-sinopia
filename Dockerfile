@@ -3,7 +3,7 @@ MAINTAINER Keyvan Fatehi <keyvanfatehi@gmail.com>
 RUN adduser --disabled-password --gecos "" sinopia
 RUN mkdir -p /opt/sinopia/storage
 WORKDIR /opt/sinopia
-RUN npm install js-yaml sinopia@0.9.3
+RUN npm install js-yaml sinopia@0.12.0
 RUN chown -R sinopia:sinopia /opt/sinopia
 USER sinopia
 ADD /config_gen.js /opt/sinopia/config_gen.js
