@@ -22,7 +22,7 @@ Sinopia is a private npm repository server
 
 ```
 docker stop sinopia
-docker run --volumes-from sinopia -it ubuntu vi /opt/sinopia/config.yaml
+docker run --volumes-from sinopia -it --rm ubuntu vi /opt/sinopia/config.yaml
 docker start sinopia
 ```
 
