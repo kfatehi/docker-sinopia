@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 var config = require('sinopia/lib/config_gen')()
-  , yaml = require('js-yaml')
   , fs = require('fs')
 
 console.log('Username: %s', config.user)
