@@ -20,6 +20,20 @@ Sinopia is a private npm repository server
 
 ### Modify configuration
 
+There are two ways to modify the configuration.
+
+To understand the difference, view the conversation here: https://github.com/keyvanfatehi/docker-sinopia/pull/10
+
+### Original Method
+
+```
+docker stop sinopia
+docker run --volumes-from sinopia -it --rm ubuntu vi /opt/sinopia/config.yaml
+docker start sinopia
+```
+
+### Alternative Method
+
 ```
 # Save the config file
 curl -L https://github.com/rlidwka/sinopia/blob/master/conf/default.yaml -o /path/to/config.yaml
