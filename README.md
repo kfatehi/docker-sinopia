@@ -1,3 +1,5 @@
+**This github repository will not be seeing any further updates for the time being. The reason is that the associated Docker repository is bugged for some time (I cannot link because the Docker Support tracker is not public...) and the bug has not been resolved. In addition, the versioning is wrong here. The main request has been to track versions automatically from sinopia upstream. This repo is not designed properly for such a case. Perhaps in the future I will script this, when I setup sinopia again.**
+
 ## Sinopia (Docker Image)
 
 Sinopia is a private npm repository server
