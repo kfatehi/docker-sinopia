@@ -24,7 +24,7 @@ uplinks:
 packages:
   '@*/*':
     # scoped packages
-    access: $all
+    access: $authenticated
     publish: $authenticated
 
   '*':
@@ -33,7 +33,7 @@ packages:
     #
     # you can specify usernames/groupnames (depending on your auth plugin)
     # and three keywords: "$all", "$anonymous", "$authenticated"
-    access: $all
+    access: $authenticated
 
     # allow all known users to publish packages
     # (anyone can register by default, remember?)
