@@ -19,7 +19,7 @@ auth:
 # a list of other known repositories we can talk to
 uplinks:
   npmjs:
-    url: https://registry.npmjs.org/
+    url: https://registry.npm.taobao.org/
 
 packages:
   '@*/*':
@@ -49,3 +49,7 @@ logs:
 
 listen:
   - 0.0.0.0:4873
+
+# maximum size of uploaded json document
+# increase it if you have "request entity too large" errors
+max_body_size: 10240mb
