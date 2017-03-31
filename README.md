@@ -1,3 +1,11 @@
+# Depracation Notice
+
+Hi everyone, this project is **no longer mainained**.
+
+Please use [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio) and [its official Docker Image](https://github.com/verdaccio/verdaccio#docker)
+
+
+
 ## Sinopia (Docker Image)
 
 Sinopia is a private npm repository server
