@@ -1,4 +1,4 @@
-FROM node
+FROM cargo.caicloudprivatetest.com/caicloud/node:4.4-slim
 MAINTAINER xu ai liang <allen@caicloud.io>
 RUN adduser --disabled-password --gecos "" sinopia
 RUN mkdir -p /opt/sinopia/storage

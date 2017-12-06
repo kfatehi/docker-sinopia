@@ -11,7 +11,7 @@ storage: ./storage
 
 auth:
   htpasswd:
-    file: ./htpasswd
+    file: ./storage/.htpasswd
     # Maximum amount of users allowed to register, defaults to "+inf".
     # You can set this to -1 to disable registration.
     #max_users: 1000
@@ -26,6 +26,7 @@ packages:
     # scoped packages
     access: $all
     publish: $authenticated
+    proxy: npmjs
 
   '*':
     # allow all users (including non-authenticated users) to read and
