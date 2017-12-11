@@ -11,7 +11,7 @@ storage: ./storage
 
 auth:
   htpasswd:
-    file: ./htpasswd
+    file: ./storage/.htpasswd
     # Maximum amount of users allowed to register, defaults to "+inf".
     # You can set this to -1 to disable registration.
     #max_users: 1000
@@ -19,13 +19,14 @@ auth:
 # a list of other known repositories we can talk to
 uplinks:
   npmjs:
-    url: https://registry.npmjs.org/
+    url: https://registry.npm.taobao.org/
 
 packages:
   '@*/*':
     # scoped packages
     access: $all
     publish: $authenticated
+    proxy: npmjs
 
   '*':
     # allow all users (including non-authenticated users) to read and
@@ -49,3 +50,7 @@ logs:
 
 listen:
   - 0.0.0.0:4873
+
+# maximum size of uploaded json document
+# increase it if you have "request entity too large" errors
+max_body_size: 10240mb
