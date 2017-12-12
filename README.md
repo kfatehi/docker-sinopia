@@ -1,6 +1,6 @@
-# Depracation Notice
+# Deprecation Notice
 
-Hi everyone, this project is **no longer mainained**.
+Hi everyone, this project is **no longer maintained**.
 
 Please use [verdaccio/verdaccio](https://github.com/verdaccio/verdaccio) and [its official Docker Image](https://github.com/verdaccio/verdaccio#docker)
 
